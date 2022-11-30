@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/kontakt-style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+	<img class="img-banner" src="SLIKE/1.jpg" alt="neki baner">
+</header>
+
+
+	<div class="navigacija">
+		<div class="navi">
+			<a href="index.html">Pocetna</a>
+		</div>
+
+		<div class="navi">
+			<a href="#">Recepti</a>
+		</div>
+
+		<div class="navi">
+			<a href="Onama.html">O nama</a>
+		</div>
+
+		<div class="navi">
+			<a href="Kontakt.html">Kontakt</a>
+		</div>
+	</div>
+
+
+<main>
+<div class="prva">
+
+			
+
+			<center>
+					<h2>Kontakt</h2>
+			</center>
+
+			<hr>
+
+			<center style="margin-top: 10px;">
+				<p id="povratnaPoruka"></p>
+			</center>
+
+
+
+				<div id="forma">
+
+					<div class= "form">
+					
+						<input type="" name="ime" required autocomplete="off" id="imeInput">
+						<label for="name" class="label-name">
+							<span class="content-name">Ime</span>
+						</label>
+					</div>	
+
+					<div class= "form">	
+						<input type="" name="prezime" required autocomplete="off" id="prezimeInput">
+						<label for="name" class="label-name">
+							<span class="content-name">Prezime</span>
+						</label>
+					</div>
+					
+
+					<div class= "form">	
+						<input type="" name="email" required autocomplete="off" id="emailInput">
+						<label for="name" class="label-name">
+							<span class="content-name">E-mail</span>
+						</label>
+					</div>
+				
+
+					<div class="form-text">
+						<textarea placeholder="Vasa poruka"></textarea>
+					</div>
+
+					<button id="dugmeipo">Pošalji</button>
+
+				</div>
+
+				<hr>
+				<br>
+				<br>
+
+
+
+
+</div>
+</main>
+
+<footer>
+	<p>N. Dj. Dj.</p>
+</footer>
+
+<script>
+	const povratnaPoruka =  document.querySelector('#povratnaPoruka');
+	const imeInput = document.querySelector('#imeInput');
+	const prezimeInput = document.querySelector('#prezimeInput');
+	const emailInput = document.querySelector('#emailInput');
+	const dugme = document.querySelector('#dugmeipo');
+
+	dugme.addEventListener('click', e => {
+		e.preventDefault();
+
+		const ime = imeInput.value;
+		const prezime = prezimeInput.value;
+		const email = emailInput.value;
+
+		const imeIprezimeReg = /^[a-zA-Z]{3,30}$/;
+		const emailReg = /^(.+)@(.+)$/;
+
+		let greske = [];
+
+		if(!imeIprezimeReg.test(ime)){
+			greske.push('Greska kod imena');
+		}
+
+		if(!imeIprezimeReg.test(prezime)){
+			greske.push('Greska kod prezimena');
+		}
+
+		if(!emailReg.test(email)){
+			greske.push('Greska kod email adrese');
+		}
+
+		if(greske.length){
+			povratnaPoruka.innerHTML = greske.join('<br>');
+		} else {
+			povratnaPoruka.innerHTML ='Uspesno popunjeno!';
+		}
+	});
+</script>
+
+</body>
+</html>

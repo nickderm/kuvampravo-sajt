@@ -1,0 +1,45 @@
+.recepti {
+	/*background-color: green;*/
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.recept-deo {
+	/*background-color: blue;*/
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.recept-deo img{
+	width: 470px;
+}
+
+.slika{
+	position: relative;
+}
+
+.tekst {
+	position: absolute;
+	bottom: 5%;
+	left: 10%;
+	font-family: 'Dancing script', cursive;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 35px;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+.slikajos {
+	transform: scale(1);
+	transition: 0.5s ease-out;
+}
+
+.slikajos:hover {
+	transform: scale(1.1);
+	transition: 0.5s ease;
+}
